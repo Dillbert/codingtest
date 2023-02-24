@@ -1,0 +1,18 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww6860\viewh6840\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 API Written in Express, two end points at /customer.\
+\
+Post request takes a json array of customer details and loops through saving each row into a MySQL database. \
+\
+Get request takes a \'91ref\'92 header which is a column in the customer table and grabs the row returning it as json. \
+\
+Java client runs a database setup on starting, creating the database if it doesn\'92t exist. Then creating the table customer. If it doesn\'92t already exist. There is a scenario where the database and table can already exist so I\'92ve added a clear table query. \
+\
+It then parses the CSV to json and posts the array to the express API which populates the database. After this there\'92s a scanner in where you can enter a ref and it will try send a Get with the ref as the header and print the json. \
+\
+To run the api you run the command \'91node index.js\'92 (in the right directory).  I have just attached both entire projects so you can open them into an IDE. }
