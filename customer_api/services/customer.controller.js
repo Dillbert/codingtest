@@ -5,7 +5,10 @@ async function getCustomersByRef(customerRef){
     const rows = await db.query(
       `SELECT * from customer where ref='${customerRef}'`
     );
-    return rows; 
+    if(rows.length > 0){
+      return rows[0]; 
+    }
+    return {}; 
 }
 
 async function createCustomers(customersArray){
